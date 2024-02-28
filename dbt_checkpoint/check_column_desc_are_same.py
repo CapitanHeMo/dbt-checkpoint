@@ -91,7 +91,7 @@ def main(argv: Optional[Sequence[str]] = None) -> int:
         return 1
     
     start_time = time.time()
-    print(args.filenames)
+    print(args)
     hook_properties = {"status_code": 0}
     end_time = time.time()
 
