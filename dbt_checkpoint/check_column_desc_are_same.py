@@ -89,8 +89,9 @@ def main(argv: Optional[Sequence[str]] = None) -> int:
     except JsonOpenError as e:
         print(f"Unable to load manifest file ({e})")
         return 1
-
+    
     start_time = time.time()
+    print(args.filenames)
     hook_properties = check_column_desc(paths=args.filenames, ignore=args.ignore)
     end_time = time.time()
 
