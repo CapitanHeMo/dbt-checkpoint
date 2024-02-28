@@ -63,7 +63,7 @@ def check_column_desc(
 
     for name, groups in grouped:
         group_cnt = Counter([group.description for group in groups])
-        if len(group_cnt.keys()) > 1:
+        if len(group_cnt.keys()) >= 1:
             status_code = 1
             print(f"{red(name)}: has different descriptions:")
             for desc, cnt in group_cnt.items():
