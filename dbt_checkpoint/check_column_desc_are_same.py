@@ -32,8 +32,7 @@ def get_all_columns(
     schemas: Generator[ModelSchema, None, None], ignore_list: Sequence[str]
 ) -> Generator[ColumnDescription, None, None]:
     for item in schemas:
-        if item.schema.get('name') == '1c_stocks':
-            print(f"1c_stocks colums:{item.schema.get('columns', {})}")
+        print(f"{item.schema.get('name')} colums:{item.schema.get('columns', {})}")
         for column in item.schema.get("columns", {}):
             desc = column.get("description")
             column_name = column.get("name")
