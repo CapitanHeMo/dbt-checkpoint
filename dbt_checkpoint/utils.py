@@ -370,6 +370,20 @@ def get_filenames(
     return result
 
 
+def get_filenames_v2(
+    paths: Sequence[str],
+    extensions: Optional[Sequence[str]] = None,
+) -> Dict[str, Path]:
+    result = {}
+    for path in paths:
+        file = Path(path)
+        filename = file.stem
+        if extensions and file.suffix not in extensions:
+            pass
+        else:
+            result[filename] = [*result.get(filename, []), file]
+    return result
+
 def run_dbt_cmd(cmd: Sequence[Any]) -> int:
     status_code = 0
     print(f"Executing cmd: `{' '.join(cmd)}`")
