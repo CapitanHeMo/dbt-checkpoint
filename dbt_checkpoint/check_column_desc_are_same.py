@@ -92,7 +92,7 @@ def main(argv: Optional[Sequence[str]] = None) -> int:
     
     start_time = time.time()
     print(args)
-    hook_properties = {"status_code": 0}
+    hook_properties = check_column_desc(paths=args.filenames, ignore=args.ignore)
     end_time = time.time()
 
     script_args = vars(args)
