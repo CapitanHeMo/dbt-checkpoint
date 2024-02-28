@@ -3,7 +3,7 @@
   description: Check the models have same descriptions for same column names.
   entry: check-column-desc-are-same
   language: python
-  types_or: [yaml]
+  files: '.*\.(yml|yaml)$'
 - id: check-column-name-contract
   name: Check column name contract
   description: Check column name abides to contract.
