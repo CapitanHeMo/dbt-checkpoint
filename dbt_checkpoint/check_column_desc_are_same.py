@@ -45,9 +45,9 @@ def get_grouped(
     ignore_list = ignore or []
     ymls = get_filenames(paths, [".yml", ".yaml"])
     filenames = set(ymls.keys())
-
+    print(filenames)
     schemas = get_model_schemas(list(ymls.values()), filenames, True)
-
+ 
     columns = get_all_columns(schemas, ignore_list)
     grouped = groupby(
         sorted(columns, key=lambda x: x.column_name), lambda x: x.column_name
